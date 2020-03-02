@@ -22,6 +22,8 @@ app.use(require('./routes/auth'));
 app.use(require('./routes/user'));
 // Use middleware for search routes
 app.use(require('./routes/search'));
+// Use middleware for transaction routes
+app.use(require('./routes/transaction'));
 
 passport.use(new BearerStrategy(async (token, done) => {
     const verifiedToken = verifyToken(token)

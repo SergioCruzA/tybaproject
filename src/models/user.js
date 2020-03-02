@@ -36,9 +36,7 @@ userSchema.pre('save', function (next) {
 });
 
 userSchema.methods.verifyPassword = function verifyPassword(password) {
-  console.log('entro aca: ', password)
   const user = this;
-  console.log(user, password)
   return bcrypt.compare(password, user.password);
 };
 
